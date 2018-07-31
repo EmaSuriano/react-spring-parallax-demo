@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Parallax } from 'react-spring';
+import styled from 'styled-components';
 
 // Little helpers ...
 const url = (name, wrap = false) => {
@@ -8,30 +9,61 @@ const url = (name, wrap = false) => {
   return wrap ? `url(${url})` : url;
 };
 
+const Divider = styled(Parallax.Layer)`
+  background: ${props => props.bg};
+  svg {
+    fill: ${props => props.fill};
+  }
+  clip-path: ${props => props.clipPath};
+`;
+
 class App extends React.Component {
   render() {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={3}>
-        <Parallax.Layer
+        {/* <Parallax.Layer
           offset={1}
           speed={1}
           style={{ backgroundColor: '#805E73' }}
+        /> */}
+
+        {/* <Parallax.Layer offset={1} speed={-0.2} factor={2}> */}
+        <Divider
+          bg="blue"
+          clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
+          offset={1}
+          factor={1}
+          speed={0.4}
         />
+        <Divider
+          bg="#805E73"
+          clipPath="polygon(0 0%, 100% 25%, 100% 100%, 0 75%)"
+          offset={1}
+          factor={1}
+          speed={0.2}
+        />
+        {/* </Parallax.Layer> */}
+
+        {/* <Parallax.Layer offset={1} speed={-0.2} factor={2}>
+          <Divider
+            bg="#87BCDE"
+            clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)"
+          />
+        </Parallax.Layer> */}
+
         <Parallax.Layer
           offset={2}
           speed={1}
           style={{ backgroundColor: '#87BCDE' }}
         />
 
-        <Parallax.Layer
-          offset={0}
-          speed={0}
+        {/* <Parallax.Layer
           factor={3}
           style={{
             backgroundImage: url('stars', true),
             backgroundSize: 'cover',
           }}
-        />
+        /> */}
 
         <Parallax.Layer
           offset={1.3}
@@ -129,14 +161,16 @@ class App extends React.Component {
         <Parallax.Layer
           offset={0}
           speed={0.1}
-          onClick={() => this.parallax.scrollTo(1)}
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
           }}
         >
-          <img src={url('server')} style={{ width: '20%' }} />
+          <h1>
+            Hello,<br /> I'm Emanuel Suriano.
+          </h1>
+          <h2>I like to build things</h2>
         </Parallax.Layer>
 
         <Parallax.Layer
