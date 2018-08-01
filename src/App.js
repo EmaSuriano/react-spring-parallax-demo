@@ -65,7 +65,7 @@ class App extends React.Component {
           }}
         /> */}
 
-        <Parallax.Layer
+        {/* <Parallax.Layer
           offset={1.3}
           speed={-0.3}
           style={{ pointerEvents: 'none' }}
@@ -133,9 +133,9 @@ class App extends React.Component {
             src={url('cloud')}
             style={{ display: 'block', width: '15%', marginLeft: '75%' }}
           />
-        </Parallax.Layer>
+        </Parallax.Layer> */}
 
-        <Parallax.Layer
+        {/* <Parallax.Layer
           offset={2.5}
           speed={-0.4}
           style={{
@@ -156,7 +156,7 @@ class App extends React.Component {
             backgroundPosition: 'center',
             backgroundImage: url('clients', true),
           }}
-        />
+        /> */}
 
         <Parallax.Layer
           offset={0}
@@ -173,7 +173,7 @@ class App extends React.Component {
           <h2>I like to build things</h2>
         </Parallax.Layer>
 
-        <Parallax.Layer
+        {/* <Parallax.Layer
           offset={1}
           speed={0.1}
           onClick={() => this.parallax.scrollTo(2)}
@@ -184,9 +184,9 @@ class App extends React.Component {
           }}
         >
           <img src={url('bash')} style={{ width: '40%' }} />
-        </Parallax.Layer>
+        </Parallax.Layer> */}
 
-        <Parallax.Layer
+        {/* <Parallax.Layer
           offset={2}
           speed={-0}
           style={{
@@ -197,7 +197,7 @@ class App extends React.Component {
           onClick={() => this.parallax.scrollTo(0)}
         >
           <img src={url('clients-main')} style={{ width: '40%' }} />
-        </Parallax.Layer>
+        </Parallax.Layer> */}
       </Parallax>
     );
   }
